@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-print("Programming is like building a multilingual puzzle")
+hello = True
+if hello:
+    print("Programming is like building a multilingual puzzle")
