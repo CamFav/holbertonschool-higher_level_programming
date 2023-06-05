@@ -12,4 +12,3 @@ if __name__ == '__main__':
     print("{:} {:}".format(len(args), sentence))
     for arg in range(len(args)):
         print("{:}: {:}".format(arg + 1, args[arg]))
-
