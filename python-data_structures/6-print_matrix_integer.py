@@ -4,4 +4,4 @@ def print_matrix_integer(matrix=[[]]):
         return
 
     for i in matrix:
-        print('\t'.join('{0}'.format(element) for element in i))
+        print(' '.join('{0}'.format(element) for element in i))
