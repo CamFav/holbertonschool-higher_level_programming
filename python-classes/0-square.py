@@ -1,3 +1,7 @@
 #!/usr/bin/python3
+"""Square
+"""
 class Square:
-    my_square = {}
+    """empty class
+    """
+    pass
