@@ -4,13 +4,11 @@
 
 def add_integer(a, b=98):
     """Add two integers."""
-    if type(a) not in [int, float]:
-        raise TypeError("a must be an integer or float")
-
-    if type(b) not in [int, float]:
-        raise TypeError("b must be an integer or float")
-
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    try:
+        result = a + b
+        return int(result)
+    except TypeError:
+        if type(a) not in [int, float]:
+            raise TypeError("a must be an integer")
+        else:
+            raise TypeError("b must be an integer")
