@@ -20,14 +20,16 @@ class Square:
     def my_print(self):
         if self.__size == 0:
             print()
+        else:
+            for yspace in range(0, self.__position[1]):
+                print()
+            for y in range(0, self.__size):
+                for xspace in range(0, self.__position[0]):
+                    print(" ", end="")
+                for x in range(0, self.__size):
+                    print("#", end="")
+                print()
 
-        for elements in range(self.__position[1]):
-            print()
-
-        for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
-
- 
     @property
     def size(self):
         return self.__size
