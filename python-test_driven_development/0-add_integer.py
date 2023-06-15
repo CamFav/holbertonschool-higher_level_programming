@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Integers addition"""
+"""Integers addition."""
 
 
 def add_integer(a, b=98):
-    """ function to add two integers """
+    """Add two integers."""
     try:
         result = a + b
         return int(result)
-    except:
+    except TypeError:
         if type(a) is not int:
             raise TypeError("a must be an integer")
         else:
