@@ -11,7 +11,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """_summary_
+        """Return a dic repr of a student instance.
 
         Returns:
             _type_: _description_
@@ -25,3 +25,12 @@ class Student:
                 student_dict[attr] = value
 
         return student_dict
+
+    def reload_from_json(self, json):
+        """_Replace all attributes of the Student instance
+
+        Args:
+            json (_type_): _description_
+        """
+        for attr, value in json.items():
+            setattr(self, attr, value)
