@@ -4,20 +4,16 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """_summary_
+    """Class Rectangle"""
 
-    Args:
-        Base (class)
-    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """_summary_
+        """A constructor method for the Rectangle class
 
         Args:
-            width (_type_): _description_
-            height (_type_): _description_
-            x (int, optional): _description_. Defaults to 0.
-            y (int, optional): _description_. Defaults to 0.
-            id (_type_, optional): _description_. Defaults to None.
+            width (int): the width of the Rectangle
+            height (int): the height of the Rectangle
+            x (int): the x position of the Recangle
+            y (int): the y position of the Rectangle
         """
         self.width = width
         self.height = height
