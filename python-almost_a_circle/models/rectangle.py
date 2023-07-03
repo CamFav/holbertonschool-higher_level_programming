@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Rectangle Class"""
+"""Import bass class from base.py"""
 from models.base import Base
+
+"""First rectangle"""
 
 
 class Rectangle(Base):
@@ -20,6 +22,11 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
+    def __str__(self):
+        """Returns a string representation of the Rectangle object."""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+{self.width}/{self.height}"
 
     @property
     def width(self):
@@ -70,20 +77,15 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Return area of rectangle"""
-        return self.__height * self.__width
+        """return h * w"""
+        return self.height * self.width
 
     def display(self):
-        """Print the Rectangle instance with # characters"""
-        for _ in range(self.__y):
-            print()
-        for _ in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
-
-    def __str__(self):
-        """Return string representation of the Rectangle"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
-{self.width}/{self.height}"
+        """print the rectangle in # symbol handle x,y"""
+        print("\n" * self.y, end="")
+        for h in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
 
     def update(self, *args, **kwargs):
         """Update the Rectangle.
@@ -135,3 +137,19 @@ class Rectangle(Base):
 
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        repr_dict = {}
+        for key, value in self.__dict__.items():
+            if key == "id":
+                repr_dict["id"] = value
+            elif key == "_Rectangle__width":
+                repr_dict["width"] = value
+            elif key == "_Rectangle__height":
+                repr_dict["height"] = value
+            elif key == "_Rectangle__x":
+                repr_dict["x"] = value
+            elif key == "_Rectangle__y":
+                repr_dict["y"] = value
+        return repr_dict
