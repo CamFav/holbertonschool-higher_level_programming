@@ -3,7 +3,7 @@
 
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 import sys
 
 
@@ -17,8 +17,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    # Query all State objects and print the id and name
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    # Query all State objects
+    states = session.query(State).order_by(State.id).all()
 
-    session.close()
+    # Print the id and name of each State object
+    for state in states:
+        print(f"{state.id}: {state.name}")
