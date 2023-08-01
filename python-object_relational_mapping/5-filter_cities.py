@@ -16,10 +16,8 @@ if __name__ == "__main__":
             .format(state_name)
             )
     rows = cur.fetchall()
-    cities_list = []
-    for row in rows:
-        cities_list.append(row[0])
-    cities_str = ", ".join(cities_list)
+
+    cities_str = ", ".join(row[0] for row in rows)
     print(cities_str)
     cur.close()
     db.close()
