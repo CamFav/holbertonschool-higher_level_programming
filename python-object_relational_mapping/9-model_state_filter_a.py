@@ -17,8 +17,10 @@ if __name__ == "__main__":
     # Create a session to interact with the database
     session = Session(engine)
     # Query all State objects
-    states = session.query(State).filter(State.name.like("%a%"))\
+    states = session.query(State.id, State.name).filter(State.name.contains
+                                                           ('a'))\
         .order_by(State.id).all()
+
     # Print the id and name of each State object
     for state in states:
         print(f"{state.id}: {state.name}")
