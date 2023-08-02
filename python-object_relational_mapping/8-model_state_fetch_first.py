@@ -19,5 +19,7 @@ if __name__ == "__main__":
     # Query all State objects
     states = session.query(State).first()
 
+    if states is None:
+        print("Nothing")
     # Print the id and name of each State object
     print(f"{states.id}: {states.name}")
