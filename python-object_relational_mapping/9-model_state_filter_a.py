@@ -23,4 +23,6 @@ if __name__ == "__main__":
     if states is None:
         print("Nothing")
     # Print the id and name of each State object
-    print(f"{states.id}: {states.name}")
+    else:
+        for state in states:
+            print(f"{state.id}: {state.name}")
